@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+  <PackageId>Excel .Net</PackageId>
+  <Authors>Alex Alikin</Authors>
+  <Company>SautinSoft</Company>
+  <OutputType>Exe</OutputType>
+  <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SautinSoft.Excel" Version="*" />
+  </ItemGroup>
+</Project>
+  
+  
+ 
