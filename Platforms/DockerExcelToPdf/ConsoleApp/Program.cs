@@ -5,8 +5,7 @@
 using SautinSoft.Excel;
 
 // Convert Excel to PDF in memory
-ExcelToPdf x = new ExcelToPdf();
-ExcelDocument excelDocument = new ExcelDocument();
+ExcelDocument x = new ExcelDocument();
 
 
 string excelFile = @"test.xlsx";
