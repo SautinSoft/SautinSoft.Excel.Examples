@@ -1,4 +1,4 @@
-﻿// Get your free 30-day key here:   
+﻿// Get your free key here:   
 // https://sautinsoft.com/start-for-free/
 
 
