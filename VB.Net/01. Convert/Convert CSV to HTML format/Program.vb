@@ -22,7 +22,7 @@ Namespace Example
 			Dim outFile As String = "..\..\..\Result.html"
 
 			Dim excelDocument As ExcelDocument = ExcelDocument.Load(inpFile)
-			excelDocument.Save(outFile, New HtmlSaveOptions())
+			excelDocument.Save(outFile, New HtmlFixedSaveOptions())
 
 			' Important for Linux: Install MS Fonts
 			' sudo apt install ttf-mscorefonts-installer -y
@@ -53,7 +53,7 @@ Namespace Example
 
 				' Save the excel document to HTML format.
 				Using outMs As New MemoryStream()
-					excelDocument.Save(outMs, New HtmlSaveOptions())
+					excelDocument.Save(outMs, New HtmlFixedSaveOptions())
 					outData = outMs.ToArray()
 				End Using
 				' Show the result for demonstration purposes.
