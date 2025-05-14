@@ -26,7 +26,7 @@ namespace Example
             string outFile = @"..\..\..\Result.html";
 
             ExcelDocument excelDocument = ExcelDocument.Load(inpFile);
-            excelDocument.Save(outFile, new HtmlSaveOptions());
+            excelDocument.Save(outFile, new HtmlFixedSaveOptions());
 
             // Important for Linux: Install MS Fonts
             // sudo apt install ttf-mscorefonts-installer -y
@@ -60,7 +60,7 @@ namespace Example
                 // Save the excel document to HTML format.
                 using (MemoryStream outMs = new MemoryStream())
                 {
-                    excelDocument.Save(outMs, new HtmlSaveOptions());
+                    excelDocument.Save(outMs, new HtmlFixedSaveOptions());
                     outData = outMs.ToArray();
                 }
                 // Show the result for demonstration purposes.
