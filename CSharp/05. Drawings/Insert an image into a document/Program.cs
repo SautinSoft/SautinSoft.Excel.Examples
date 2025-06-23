@@ -21,7 +21,7 @@ namespace Example
         /// Create xlsx file with an image inside.
         /// </summary>
 		/// <remarks>
-        /// Details: https://sautinsoft.com/products/excel/help/net/developer-guide/insert-images-in-excel-csharp-vb.php
+        /// Details: https://sautinsoft.com/products/excel/help/net/developer-guide/drawings/insert-images-in-excel-csharp-vb.php
         /// </remarks>
         static void InsertImage()
         {
@@ -34,7 +34,7 @@ namespace Example
             var worksheet = excelDocument.Worksheets["Page 1"];
 
             // Insert an image
-            worksheet.Pictures.Add(image, SKRect.Create(1080, 960));
+            worksheet.Drawings.Add(image, new SautinSoft.Excel.Drawing.Rectangle(0, 0, 1080, 960));
 
             excelDocument.Save(outFile);
 
@@ -59,7 +59,7 @@ namespace Example
             byte[] imageInBytes = File.ReadAllBytes(image);
             using (var streamImage = new MemoryStream(imageInBytes))
             {
-                worksheet.Pictures.Add(streamImage, SKRect.Create(1080, 960), ExcelPictureFormat.Jpeg);
+                worksheet.Drawings.Add(streamImage, new SautinSoft.Excel.Drawing.Rectangle(0, 0, 1080, 960), ExcelPictureFormat.Jpeg);
                 excelDocument.Save(outFile);
             }
 
@@ -81,7 +81,7 @@ namespace Example
             var worksheet = excelDocument.Worksheets["Page 1"];
 
             // Insert an image anchored to cells
-            worksheet.Pictures.Add(image, PositionOption.FreeFloating, new AnchorCell(worksheet.Columns[6], worksheet.Rows[6], true),
+            worksheet.Drawings.Add(image, PositionOption.FreeFloating, new AnchorCell(worksheet.Columns[6], worksheet.Rows[6], true),
                 new AnchorCell(worksheet.Columns[20], worksheet.Rows[40], true));
             excelDocument.Save(outFile);
 
@@ -106,7 +106,7 @@ namespace Example
             byte[] imageInBytes = File.ReadAllBytes(image);
             using (var streamImage = new MemoryStream(imageInBytes))
             {
-                worksheet.Pictures.Add(streamImage, PositionOption.MoveAndSize, new AnchorCell(worksheet.Columns[6], worksheet.Rows[6], true),
+                worksheet.Drawings.Add(streamImage, PositionOption.MoveAndSize, new AnchorCell(worksheet.Columns[6], worksheet.Rows[6], true),
                     new AnchorCell(worksheet.Columns[20], worksheet.Rows[40], true), ExcelPictureFormat.Jpeg);
                 excelDocument.Save(outFile);
             }
