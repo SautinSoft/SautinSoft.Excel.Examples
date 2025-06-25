@@ -1,4 +1,4 @@
-Option Infer On
+﻿Option Infer On
 
 Imports SautinSoft.Excel
 Imports System.IO
@@ -32,7 +32,7 @@ Namespace Example
 			Dim worksheet = excelDocument.Worksheets("Page 1")
 
 			' Insert an image
-			worksheet.Pictures.Add(image, SKRect.Create(1080, 960))
+			worksheet.Drawings.Add(image, New SautinSoft.Excel.Drawing.Rectangle(0, 0, 1080, 960))
 
 			excelDocument.Save(outFile)
 
@@ -55,7 +55,7 @@ Namespace Example
 			' Insert an image from a stream
 			Dim imageInBytes() As Byte = File.ReadAllBytes(image)
 			Using streamImage = New MemoryStream(imageInBytes)
-				worksheet.Pictures.Add(streamImage, SKRect.Create(1080, 960), ExcelPictureFormat.Jpeg)
+				worksheet.Drawings.Add(streamImage, New SautinSoft.Excel.Drawing.Rectangle(0, 0, 1080, 960), ExcelPictureFormat.Jpeg)
 				excelDocument.Save(outFile)
 			End Using
 
@@ -76,7 +76,7 @@ Namespace Example
 			Dim worksheet = excelDocument.Worksheets("Page 1")
 
 			' Insert an image anchored to cells
-			worksheet.Pictures.Add(image, PositionOption.FreeFloating, New AnchorCell(worksheet.Columns(6), worksheet.Rows(6), True), New AnchorCell(worksheet.Columns(20), worksheet.Rows(40), True))
+			worksheet.Drawings.Add(image, PositionOption.FreeFloating, New AnchorCell(worksheet.Columns(6), worksheet.Rows(6), True), New AnchorCell(worksheet.Columns(20), worksheet.Rows(40), True))
 			excelDocument.Save(outFile)
 
 			' Important for Linux: Install MS Fonts
@@ -98,7 +98,7 @@ Namespace Example
 			' Insert an image from a stream, anchored to cells
 			Dim imageInBytes() As Byte = File.ReadAllBytes(image)
 			Using streamImage = New MemoryStream(imageInBytes)
-				worksheet.Pictures.Add(streamImage, PositionOption.MoveAndSize, New AnchorCell(worksheet.Columns(6), worksheet.Rows(6), True), New AnchorCell(worksheet.Columns(20), worksheet.Rows(40), True), ExcelPictureFormat.Jpeg)
+				worksheet.Drawings.Add(streamImage, PositionOption.MoveAndSize, New AnchorCell(worksheet.Columns(6), worksheet.Rows(6), True), New AnchorCell(worksheet.Columns(20), worksheet.Rows(40), True), ExcelPictureFormat.Jpeg)
 				excelDocument.Save(outFile)
 			End Using
 
