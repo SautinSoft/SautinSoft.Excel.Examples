@@ -69,7 +69,7 @@ namespace Example
             using (MemoryStream ms = new MemoryStream())
             {
                 // 2nd parameter: we've explicitly set to save our document in HTML format.
-                excelDocument.Save(ms, new HtmlSaveOptions());
+                excelDocument.Save(ms, new HtmlFixedSaveOptions());
                 // Important for Linux: Install MS Fonts
                 // sudo apt install ttf-mscorefonts-installer -y
 

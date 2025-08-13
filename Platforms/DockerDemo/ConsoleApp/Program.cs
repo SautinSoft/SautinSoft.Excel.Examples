@@ -10,14 +10,15 @@ ExcelDocument x = new ExcelDocument();
 
 string excelFile = @"test.xlsx";
 string pdfFile = @"test.pdf";
-byte[] pdfBytes = null;
+byte[] pdfBytes;
 
 try
 {
     // Let us say, we have a memory stream with Excel data.
     using (MemoryStream ms = new MemoryStream(File.ReadAllBytes(excelFile)))
     {
-        pdfBytes = x.ConvertBytes(ms.ToArray());
+        x.Save(ms, new PdfSaveOptions());
+        pdfBytes = ms.ToArray();
     }
     // Save pdfBytes to a file for demonstration purposes.
     File.WriteAllBytes(pdfFile, pdfBytes);

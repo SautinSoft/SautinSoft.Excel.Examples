@@ -18,8 +18,8 @@ Namespace Example
 		''' Details httpssautinsoft.comproductsexcelhelpnetdeveloper-guideconvert-xls-to-xlsx-in-csharp-vb.php
 		''' remarks
 		Private Shared Sub ConvertFromFile()
-			Dim inpFile As String = ......Example.xls
-			Dim outFile As String = ......Result.xlsx
+			Dim inpFile As String = "..\..\..\Example.xls"
+			Dim outFile As String = "..\..\..\Result.xlsx"
 
 			Dim excelDocument As ExcelDocument = ExcelDocument.Load(inpFile)
 			excelDocument.Save(outFile, New XlsxSaveOptions())
@@ -41,8 +41,8 @@ Namespace Example
 
 			' We need files only for demonstration purposes.
 			' The conversion process will be done completely in memory.
-			Dim inpFile As String = ......Example.xls
-			Dim outFile As String = ......ResultStream.xlsx
+			Dim inpFile As String = "..\..\..\Example.xls"
+			Dim outFile As String = "..\..\..\ResultStream.xlsx"
 			Dim inpData() As Byte = File.ReadAllBytes(inpFile)
 			Dim outData() As Byte = Nothing
 

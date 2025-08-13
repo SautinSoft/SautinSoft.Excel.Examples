@@ -63,7 +63,7 @@ Namespace Example
 			' Let's save our document to a MemoryStream.
 			Using ms As New MemoryStream()
 				' 2nd parameter: we've explicitly set to save our document in HTML format.
-				excelDocument.Save(ms, New HtmlSaveOptions())
+				excelDocument.Save(ms, New HtmlFixedSaveOptions())
 				' Important for Linux: Install MS Fonts
 				' sudo apt install ttf-mscorefonts-installer -y
 

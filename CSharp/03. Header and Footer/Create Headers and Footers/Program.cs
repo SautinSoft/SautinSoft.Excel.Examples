@@ -47,13 +47,13 @@ namespace Example
 
             // Sample data
             List<List<object>> data = new List<List<object>>() {
-                new List<object> { "Date", "Product", "Category", "Quantity", "Unit Price", "Total Cost" },
-                new List<object> { new DateOnly(2024, 12, 1).ToString(), "Apples", "Fruits", 15, 1.2, "=D2*E2" },
-                new List<object> { new DateOnly(2024, 12, 1).ToString(), "Bread", "Bakery", 10, 0.8, "=D3*E3" },
-                new List<object> { new DateOnly(2024, 12, 2).ToString(), "Milk", "Dairy", 20, 1.5, "=D4*E4" },
-                new List<object> { new DateOnly(2024, 12, 2).ToString(), "Oranges", "Fruits", 10, 1.8, "=D5*E5" },
-                new List<object> { new DateOnly(2024, 12, 3).ToString(), "Chocolates", "Sweets", 5, 2.5, "=D6*E6" },
-                new List<object> { new DateOnly(2024, 12, 3).ToString(), "Potatoes", "Vegetables", 25, 0.5, "=D7*E7" },
+            new List<object> { "Date", "Product", "Category", "Quantity", "Unit Price", "Total Cost" },
+                new List<object> { new DateTime(2024, 12, 1).ToString("yyyy-MM-dd"), "Apples", "Fruits", 15, 1.2, "=D2*E2" },
+                new List<object> { new DateTime(2024, 12, 1).ToString("yyyy-MM-dd"), "Bread", "Bakery", 10, 0.8, "=D3*E3" },
+                new List<object> { new DateTime(2024, 12, 2).ToString("yyyy-MM-dd"), "Milk", "Dairy", 20, 1.5, "=D4*E4" },
+                new List<object> { new DateTime(2024, 12, 2).ToString("yyyy-MM-dd"), "Oranges", "Fruits", 10, 1.8, "=D5*E5" },
+                new List<object> { new DateTime(2024, 12, 3).ToString("yyyy-MM-dd"), "Chocolates", "Sweets", 5, 2.5, "=D6*E6" },
+                new List<object> { new DateTime(2024, 12, 3).ToString("yyyy-MM-dd"), "Potatoes", "Vegetables", 25, 0.5, "=D7*E7" },
             };
 
             // Inserting data
